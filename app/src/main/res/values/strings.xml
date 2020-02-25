@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ComplementariasMx</string>
+    <string-array name="genero">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+    <string-array name="carreras">
+        <item>Sistemas</item>
+        <item>Mecatronica</item>
+        <item>Industrial</item>
+        <item>Administracion</item>
+    </string-array>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grandient_formularios"
+    android:orientation="vertical"
+    tools:context=".AlumnosActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Registro de alumnos"
+        android:textColor="@color/negro"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/alTxtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/editext_login"
+        android:hint="nombre"
+        android:inputType="textPersonName"
+        android:paddingStart="80dp"
+        android:paddingEnd="40dp" />
+
+    <Spinner
+        android:id="@+id/alSpinerGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:entries="@array/genero"
+        android:paddingStart="80dp"
+        android:paddingEnd="40dp" />
+
+    <EditText
+        android:id="@+id/alTxtAmaterno"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/editext_login"
+        android:hint="apellido materno"
+        android:inputType="textPersonName"
+        android:paddingStart="80dp"
+        android:paddingEnd="40dp" />
+
+    <EditText
+        android:id="@+id/alTxtApaterno"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/editext_login"
+        android:hint="apellido paterno"
+        android:inputType="textPersonName"
+        android:paddingStart="80dp"
+        android:paddingEnd="40dp" />
+
+    <EditText
+        android:id="@+id/alTxtNumeroControl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/editext_login"
+        android:hint="numero de control"
+        android:inputType="number"
+        android:paddingStart="80dp"
+        android:paddingEnd="40dp" />
+
+    <Spinner
+        android:id="@+id/alSpinnerCarrera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:entries="@array/carreras"
+        android:paddingStart="80dp"
+        android:paddingEnd="40dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/alBtnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/background_btn_formularios"
+            android:text="Registrar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alTxtBuscar"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/editext_login"
+                android:hint="id"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:paddingEnd="10dp" />
+
+            <Button
+                android:id="@+id/alBtnBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:text="Buscar" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

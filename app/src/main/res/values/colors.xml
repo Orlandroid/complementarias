@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal">#008080</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorLogin">#1063A5</color>
+    <color name="txtLogin">#F8FAF8</color>
+    <color name="rojo">#d9534f</color>
+    <color name="negro">#030303</color>
+    <color name="amarillo">#FFD600</color>
+    <color name="gris">#808080</color>
+    <color name="verde">#008000</color>
+    <color name="olive">#808000</color>
+    <color name="morado">#6200EA</color>
+    <color name="azul">#3949AB</color>
+    <color name="cielo">#CCEEFF</color>
+    <color name="blanco">#f9f9f9</color>
+    <color name="sandybrown">#f4a460</color>
+
+    <color name="primary">#0275d8</color>
+    <color name="succes">#5cb85c</color>
+    <color name="info">#5bc0de</color>
+    <color name="waring">#f0ad4e</color>
+    <color name="danger">#d9534f</color>
+    <color name="inverse">#292b2c</color>
+    <color name="faded">#f7f7f7</color>
+</resources>
