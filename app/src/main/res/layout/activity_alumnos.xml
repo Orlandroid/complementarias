@@ -89,20 +89,47 @@
         android:paddingStart="80dp"
         android:paddingEnd="40dp" />
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:orientation="vertical">
+        android:layout_marginEnd="5dp">
 
-        <Button
-            android:id="@+id/alBtnRegistrar"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/background_btn_formularios"
-            android:text="Registrar" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/alBtnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/background_btn_formularios"
+                android:backgroundTint="@color/primary"
+                android:text="Registrar" />
+
+            <Button
+                android:id="@+id/alBtnActualizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/background_btn_formularios"
+                android:backgroundTint="@color/succes"
+                android:text="Actualizar" />
+
+            <Button
+                android:id="@+id/alBtnEliminar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/background_btn_formularios"
+                android:backgroundTint="@color/danger"
+                android:text="Eliminar" />
+
+        </TableRow>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,7 +137,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/alTxtBuscar"
+                android:id="@+id/alTxtId"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
@@ -129,7 +156,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/info"
+                android:background="@drawable/background_btn_formularios"
                 android:text="Buscar" />
         </LinearLayout>
-    </LinearLayout>
+    </TableLayout>
 </LinearLayout>

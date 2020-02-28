@@ -1,11 +1,14 @@
 package com.example.app_004_complementariasmx.modelo;
 
+import androidx.annotation.NonNull;
+
 public class Alumno extends Persona {
 
 
     private String numeroDeControl;
     private int id_carrera;
     private int id_alumno;
+
 
     public int getId_alumno() {
         return id_alumno;
@@ -29,5 +32,11 @@ public class Alumno extends Persona {
 
     public void setCarrera(int carrera) {
         this.id_carrera = carrera;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return  String.format("%s %s %s %s %s %d",getNombre(),getSexo(),getaMaterno(),getaPaterno(),getNumeroDeControl(),getCarrera());
     }
 }
