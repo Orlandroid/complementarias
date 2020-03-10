@@ -93,11 +93,12 @@ public class AlumnosActivity extends AppCompatActivity {
         alumno = new Alumno();
         AlumnoC alumnoC = new AlumnoC(alumno, getApplicationContext());
         alumnoC.searchStudent(txtId.getText().toString());
+        alumnoC.setValuesForAlumno();
         txtNombre.setText(alumno.getNombre());
         txtAmaterno.setText(alumno.getaMaterno());
         txtApaterno.setText(alumno.getaPaterno());
         txtNumeroControl.setText(alumno.getNumeroDeControl());
-        Toast.makeText(this, alumno.getNombre(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, alumno.toString(), Toast.LENGTH_SHORT).show();
     }
 
     @OnClick(R.id.alBtnActualizar)

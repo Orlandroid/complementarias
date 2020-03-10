@@ -1,7 +1,6 @@
 package com.example.app_004_complementariasmx.controlador;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -12,9 +11,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.app_004_complementariasmx.MySingleton;
 import com.example.app_004_complementariasmx.modelo.Alumno;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -30,15 +31,25 @@ public class AlumnoC {
     private String BUSCAR = URL_ROOT + "buscar";
     private Context context;
     private RequestQueue requestQueue;
-
+    private JSONObject obj;
 
     public AlumnoC(Alumno alumno, Context context) {
         this.alumno = alumno;
         this.context = context;
     }
 
-    public Alumno getAlumno() {
-        return alumno;
+    public void setValuesForAlumno() {
+        try {
+            alumno.setNombre(obj.getString("nombre"));
+            alumno.setSexo(obj.getString("sexo"));
+            alumno.setaMaterno(obj.getString("apellido_materno"));
+            alumno.setaPaterno(obj.getString("apellido_paterno"));
+            alumno.setNumeroDeControl(obj.getString("numero_control"));
+            alumno.setId_alumno(Integer.parseInt(obj.getString("id_carrera")));
+            Toast.makeText(context, "Segundo metodo", Toast.LENGTH_SHORT).show();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public void searchStudent(String id) {
@@ -46,21 +57,15 @@ public class AlumnoC {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(BUSCAR, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                JSONObject jsonObject;
                 for (int i = 0; i < response.length(); i++) {
                     try {
-                        jsonObject = response.getJSONObject(i);
-                        alumno.setNombre(jsonObject.getString("nombre"));
-                        alumno.setSexo(jsonObject.getString("sexo"));
-                        alumno.setaMaterno(jsonObject.getString("apellido_materno"));
-                        alumno.setaPaterno(jsonObject.getString("apellido_paterno"));
-                        alumno.setNumeroDeControl(jsonObject.getString("numero_control"));
-                        alumno.setId_alumno(Integer.parseInt(jsonObject.getString("id_carrera")));
-                        Toast.makeText(context, alumno.toString(), Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        Log.w("ERROR", e.getMessage());
+                        obj = response.getJSONObject(i);
+                        Toast.makeText(context, "primer metodo", Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -69,8 +74,7 @@ public class AlumnoC {
             }
         }
         );
-        requestQueue = Volley.newRequestQueue(context);
-        requestQueue.add(jsonArrayRequest);
+        MySingleton.getInstance(context).addToRequestQueue(jsonArrayRequest);
     }
 
 
