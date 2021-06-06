@@ -40,6 +40,13 @@ public class AlumnosActivity extends AppCompatActivity {
         return new EditText[]{txtNombre, txtApaterno, txtAmaterno, txtNumeroControl};
     }
 
+    private Spinner[] regresarSpinner(){
+        Spinner[] all = new Spinner[2];
+        all[0]=spinnerGenero;
+        all[1]=spinnerCarrera;
+        return all;
+    }
+
     private void limpiarTxt(EditText[] datos) {
         for (EditText text : datos)
             text.setText(null);
@@ -92,13 +99,7 @@ public class AlumnosActivity extends AppCompatActivity {
         }
         alumno = new Alumno();
         AlumnoC alumnoC = new AlumnoC(alumno, getApplicationContext());
-        alumnoC.searchStudent(txtId.getText().toString());
-        alumnoC.setValuesForAlumno();
-        txtNombre.setText(alumno.getNombre());
-        txtAmaterno.setText(alumno.getaMaterno());
-        txtApaterno.setText(alumno.getaPaterno());
-        txtNumeroControl.setText(alumno.getNumeroDeControl());
-        Toast.makeText(this, alumno.toString(), Toast.LENGTH_SHORT).show();
+        alumnoC.searchStudent(txtId.getText().toString(),regresarArregloEditText(),regresarSpinner());
     }
 
     @OnClick(R.id.alBtnActualizar)

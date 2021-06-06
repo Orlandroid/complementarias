@@ -3,6 +3,7 @@ package com.example.app_004_complementariasmx.controlador;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -25,7 +26,7 @@ public class LoginC {
     private RequestQueue requestQueue;
     private Context context;
     private Usuario usuario;
-    private String URL = "http://192.168.2.106/complementariasmx/login.php";
+    private String URL = "http://192.168.0.157/AndroidCrud/validar.php";
 
     public LoginC(Context context, Usuario user) {
         this.context = context;
@@ -38,6 +39,7 @@ public class LoginC {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.w("R",response.toString());
                 if (response.trim().equals("find")) {
                     Toast.makeText(context, "Iniciando session", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, MenuPrincipal.class);
@@ -50,6 +52,7 @@ public class LoginC {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(context, "Error conexion de internet", Toast.LENGTH_SHORT).show();
+
             }
         }
         ) {
@@ -57,7 +60,7 @@ public class LoginC {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("usuario", usuario.getUsuario());
-                params.put("contra", usuario.getContra());
+                params.put("clave", usuario.getContra());
                 return params;
             }
         };
