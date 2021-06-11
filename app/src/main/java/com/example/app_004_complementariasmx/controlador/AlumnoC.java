@@ -11,7 +11,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -24,6 +23,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class AlumnoC {
 
@@ -31,7 +31,7 @@ public class AlumnoC {
     private final String URL_ROOT = "http://192.168.0.157/AndroidCrud/alumno.php?accion=";
     private final String REGISTRAR = URL_ROOT + "registrar";
     private final String ACTUALIZAR = URL_ROOT + "actualizar";
-    private final String ELIMINAR = URL_ROOT + "eliminar";
+    private final String ELIMINAR = "http://192.168.0.157/AndroidCrud/delete.php";
     private String BUSCAR = "http://192.168.0.157/AndroidCrud/buscar_alumno.php";
     private Context context;
     private RequestQueue requestQueue;
@@ -59,13 +59,11 @@ public class AlumnoC {
                             datos[1].setText(paterno);
                             datos[2].setText(materno);
                             datos[3].setText(numero);
-                            datosSpiner[0].setSelection(carrera-1);
+                            datosSpiner[1].setSelection(carrera-1);
                            if(sexo.equals("Hombre"))
-                               datosSpiner[1].setSelection(0);
+                               datosSpiner[0].setSelection(0);
                            else
-                               datosSpiner[1].setSelection(1);
-
-                           Log.w("DATA", String.valueOf(response.toString().length()));
+                               datosSpiner[0].setSelection(1);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -74,7 +72,7 @@ public class AlumnoC {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                       Log.w("ERROR",error.getMessage());
+                       Log.w("ERROR", Objects.requireNonNull(error.getMessage()));
                     }
                 });
 
