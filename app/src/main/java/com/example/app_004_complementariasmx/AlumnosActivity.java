@@ -89,6 +89,7 @@ public class AlumnosActivity extends AppCompatActivity {
         AlumnoC alumnoC = new AlumnoC(alumno, getApplicationContext());
         alumnoC.eliminarAlumno();
         txtId.setText(null);
+        limpiarTxt(regresarArregloEditText());
     }
 
     @OnClick(R.id.alBtnBuscar)
@@ -100,6 +101,7 @@ public class AlumnosActivity extends AppCompatActivity {
         alumno = new Alumno();
         AlumnoC alumnoC = new AlumnoC(alumno, getApplicationContext());
         alumnoC.searchStudent(txtId.getText().toString(),regresarArregloEditText(),regresarSpinner());
+        limpiarTxt(regresarArregloEditText());
     }
 
     @OnClick(R.id.alBtnActualizar)

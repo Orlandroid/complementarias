@@ -16,8 +16,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.app_004_complementariasmx.MySingleton;
 import com.example.app_004_complementariasmx.modelo.Alumno;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,7 +28,7 @@ public class AlumnoC {
     private Alumno alumno;
     private final String URL_ROOT = "http://192.168.0.157/AndroidCrud/alumno.php?accion=";
     private final String REGISTRAR = URL_ROOT + "registrar";
-    private final String ACTUALIZAR = URL_ROOT + "actualizar";
+    private final String ACTUALIZAR = "http://192.168.0.157/AndroidCrud/edit.php";
     private final String ELIMINAR = "http://192.168.0.157/AndroidCrud/delete.php";
     private String BUSCAR = "http://192.168.0.157/AndroidCrud/buscar_alumno.php";
     private Context context;
@@ -84,7 +82,10 @@ public class AlumnoC {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ACTUALIZAR, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(context, "Se registro actualizo al alumno", Toast.LENGTH_SHORT).show();
+               if(response.trim().equals("Succes"))
+                   Toast.makeText(context, "Usuario actualizado correctamente", Toast.LENGTH_SHORT).show();
+               else
+                   Toast.makeText(context, "No hay un usuario con ese id", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -98,8 +99,8 @@ public class AlumnoC {
                 Map<String, String> params = new HashMap<>();
                 params.put("nombre", alumno.getNombre());
                 params.put("sexo", alumno.getSexo());
-                params.put("apellido_materno", alumno.getaMaterno());
-                params.put("apellido_paterno", alumno.getaPaterno());
+                params.put("materno", alumno.getaMaterno());
+                params.put("paterno", alumno.getaPaterno());
                 params.put("numero_control", alumno.getNumeroDeControl());
                 params.put("id_carrera", String.valueOf(alumno.getCarrera()));
                 params.put("id", String.valueOf(alumno.getId_alumno()));
@@ -115,7 +116,10 @@ public class AlumnoC {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(context, "Se elimino al alumno correctamente", Toast.LENGTH_SHORT).show();
+                       if (response.trim().equals("Succes"))
+                           Toast.makeText(context, "Se ha eliminado correctamente el usuario", Toast.LENGTH_SHORT).show();
+                       else
+                           Toast.makeText(context, "No existe ningun alumno con ese id", Toast.LENGTH_SHORT).show();
                     }
                 },
                 new Response.ErrorListener() {
