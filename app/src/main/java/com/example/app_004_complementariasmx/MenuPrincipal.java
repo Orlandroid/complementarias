@@ -18,7 +18,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
     @OnClick(R.id.cardview)
     public void clik() {
-        Intent intent = new Intent(this, AlumnosActivity.class);
+        Intent intent = new Intent(this, Alumnos.class);
         startActivity(intent);
         finish();
     }
