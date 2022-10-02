@@ -11,6 +11,9 @@ import com.example.app_004_complementariasmx.databinding.ActivityMainBinding;
 import com.example.app_004_complementariasmx.domain.modelo.remote.LoginRequest;
 import com.example.app_004_complementariasmx.presentacion.ui.alumnos.Alumnos;
 import com.example.app_004_complementariasmx.presentacion.ui.menu.MenuPrincipal;
+import com.example.app_004_complementariasmx.presentacion.util.UtilKt;
+
+import okhttp3.internal.Util;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -31,10 +34,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setUpUi() {
         binding.btnIniciarSession.setOnClickListener(v -> {
-            String usuario = binding.user.getText().toString();
-            String password = binding.user.getText().toString();
-            LoginRequest loginRequest = new LoginRequest(usuario, password);
-            viewModel.login(loginRequest);
+            if (UtilKt.isNetworkConnected(getApplicationContext())) {
+                String usuario = binding.user.getText().toString();
+                String password = binding.user.getText().toString();
+                LoginRequest loginRequest = new LoginRequest(usuario, password);
+                viewModel.login(loginRequest);
+                return;
+            }
+            Toast.makeText(this, "Error conexion de internet", Toast.LENGTH_SHORT).show();
         });
     }
 
