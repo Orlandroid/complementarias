@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/grandient_formularios"
     android:orientation="vertical"
-    tools:context=".AlumnosActivity">
+    tools:context=".presentacion.ui.AlumnosActivity">
 
     <TextView
         android:layout_width="match_parent"

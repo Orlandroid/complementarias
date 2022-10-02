@@ -1,4 +1,4 @@
-package com.example.app_004_complementariasmx.modelo;
+package com.example.app_004_complementariasmx.domain.modelo;
 
 public class Usuario {
 

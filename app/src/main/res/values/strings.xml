@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">ComplementariasMx</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="login">Login</string>
+    <string name="iniciar_session">Iniciar Session</string>
+    <string name="user">user</string>
+    <string name="password">password</string>
     <string-array name="genero">
         <item>Hombre</item>
         <item>Mujer</item>

@@ -1,8 +1,8 @@
-package com.example.app_004_complementariasmx.modelo;
+package com.example.app_004_complementariasmx.domain.modelo;
 
 import androidx.annotation.NonNull;
 
-public class Alumno extends Persona {
+public class Alumno extends com.example.app_004_complementariasmx.domain.modelo.Persona {
 
 
     private String numeroDeControl;

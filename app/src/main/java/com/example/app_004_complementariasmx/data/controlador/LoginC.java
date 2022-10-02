@@ -1,4 +1,4 @@
-package com.example.app_004_complementariasmx.controlador;
+package com.example.app_004_complementariasmx.data.controlador;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,9 +13,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.app_004_complementariasmx.MenuPrincipal;
-import com.example.app_004_complementariasmx.modelo.Alumno;
-import com.example.app_004_complementariasmx.modelo.Usuario;
+import com.example.app_004_complementariasmx.presentacion.ui.menu.MenuPrincipal;
+import com.example.app_004_complementariasmx.domain.modelo.Usuario;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,17 +34,16 @@ public class LoginC {
     }
 
 
-
     public void login() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.w("R",response.toString());
+                Log.w("R", response.toString());
                 if (response.trim().equals("find")) {
                     Toast.makeText(context, "Iniciando session", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, MenuPrincipal.class);
                     context.startActivity(intent);
-                    ((Activity)context).finish();
+                    ((Activity) context).finish();
                 } else
                     Toast.makeText(context, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }

@@ -1,4 +1,4 @@
-package com.example.app_004_complementariasmx;
+package com.example.app_004_complementariasmx.presentacion.ui.alumnos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -6,11 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.app_004_complementariasmx.adaptadores.AdaptadorAlumno;
-import com.example.app_004_complementariasmx.modelo.Alumno;
+import com.example.app_004_complementariasmx.R;
+import com.example.app_004_complementariasmx.domain.modelo.Alumno;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Alumnos extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class Alumnos extends AppCompatActivity {
         RecyclerView recyclerViewAlumnos = findViewById(R.id.gridAlumnos);
 
         ArrayList<Alumno> ListaAlumnos = new ArrayList<>();
-        Alumno alumno=new Alumno();
+        Alumno alumno = new Alumno();
         alumno.setNombre("Guadalupe");
         alumno.setSexo("Hombre");
         alumno.setaMaterno("Diaz");
@@ -32,9 +31,9 @@ public class Alumnos extends AppCompatActivity {
         ListaAlumnos.add(alumno);
 
 
-        AdaptadorAlumno adaptador=new AdaptadorAlumno(ListaAlumnos);
+        AdaptadorAlumno adaptador = new AdaptadorAlumno(ListaAlumnos);
         recyclerViewAlumnos.setAdapter(adaptador);
-        recyclerViewAlumnos.setLayoutManager(new GridLayoutManager(this,1));
+        recyclerViewAlumnos.setLayoutManager(new GridLayoutManager(this, 1));
 
     }
 }
