@@ -7,10 +7,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_004_complementariasmx.R
-import com.example.app_004_complementariasmx.domain.modelo.Alumno
 import java.util.*
 
-class AdaptadorAlumno(val alumnos: ArrayList<Alumno>) :
+class AdaptadorAlumno() :
     RecyclerView.Adapter<AdaptadorAlumno.ViewHolder>() {
 
 
@@ -29,14 +28,10 @@ class AdaptadorAlumno(val alumnos: ArrayList<Alumno>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val alumno = alumnos[position]
-        holder.nombre.text = alumno.nombre
-        holder.sexo.text = alumno.sexo
-        holder.numero.text = alumno.numeroDeControl
-        holder.carrera.text = alumno.carrera.toString()
+
     }
 
-    override fun getItemCount(): Int = alumnos.size
+    override fun getItemCount(): Int = 10
 
 
 }

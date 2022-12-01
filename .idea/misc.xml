@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable-mdpi/grandient_formularios.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable/background_btn_formularios.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable/editext_login.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable/forma.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable/forma_toas.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable/gradiente_menu_principal.xml" value="0.3625" />
+        <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3625" />
         <entry key="..\:/Users/guada/Documents/Proyectos github/Proyectos personales/complementarias/app/src/main/res/layout/activity_menu_principal.xml" value="0.3875" />
       </map>
     </option>

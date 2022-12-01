@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import com.example.app_004_complementariasmx.R;
-import com.example.app_004_complementariasmx.domain.modelo.Alumno;
 
 
 public class AlumnosActivity extends AppCompatActivity {
-    Alumno alumno;
 
 
     private void limpiarTxt(EditText[] datos) {
